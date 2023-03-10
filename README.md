@@ -5,6 +5,9 @@
 - Java
 - Spring Boot
 - Maven
+- Springdoc-openapi-starter-webmvc-ui
+- Mapstruct
+- Postgres
 - zxing library<p>
 ### Installation
 Clone the repository:<p>
@@ -21,3 +24,6 @@ Run the project:
 The QRCode application provides a REST API that accepts data to generate a QR code or returns the text that is contained in a QR code image file that was sent. You can use any tool that can send HTTP requests to the API, such as curl or Postman
 
 
+
+![2023-03-10_11-06-36](https://user-images.githubusercontent.com/102060016/224259291-dcce68ed-65d6-460b-a6ba-5785ad0d9ce8.png)
+![2023-03-10_11-06-03](https://user-images.githubusercontent.com/102060016/224259303-97306171-b831-4c19-9fa5-c743e64dba3a.png)
