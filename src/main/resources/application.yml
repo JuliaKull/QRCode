@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: QRCode
+
+  mvc:
+    format:
+      date-time: iso
+
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5432/company
+    username: postgres
+    password:
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+
+server:
+  port: 8080
+
