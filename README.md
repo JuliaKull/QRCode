@@ -21,8 +21,8 @@ Install backend dependencies:<p>
 `mvn clean install`<p>
 Start the backend server:<p>
 `mvn spring-boot:run`<p>
-Navigate to the frontend directory:<p>
-`cd ui`<p>
+Clone the repository:<p>
+`git clone https://github.com/JuliaKull/QRCode-React.git`<p>
 Install frontend dependencies:<p>
 `npm install`<p>
 Start the frontend server:<p>
