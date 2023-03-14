@@ -1,4 +1,4 @@
-## QRCode
+## QRCode Java
 ### QRCode is is a full stack application that generates QR codes and reads text from QR code images using the zxing library. The application uses Java and Spring Boot on the backend, with Postgres as the database. On the frontend, JavaScript and React. It`s basic CRUD application, which can generating QR codes with Employee data and uploading QR Code images for text extraction.
 
 ### Technologies Used
