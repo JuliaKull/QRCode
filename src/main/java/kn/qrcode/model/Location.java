@@ -1,7 +1,6 @@
 package kn.qrcode.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.SuperBuilder;
@@ -19,9 +18,8 @@ public class Location extends AbstractActiveEntity implements Serializable {
     @Column(name = "name")
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "country_id", nullable = false)
-    private Country country;
+    @Column(name = "country", nullable = false)
+    private String country;
 
     @Column(name = "city", nullable = false)
     private String city;

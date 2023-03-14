@@ -12,20 +12,20 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.awt.image.BufferedImage;
-import java.io.File;
 import java.util.List;
 
 @RestController
 @AllArgsConstructor
 @RequestMapping("/api/employees")
 @Slf4j
+@CrossOrigin("http://localhost:3000")
 public class EmployeeController {
 
     private final EmployeeService employeeService;
 
     private final QRCodeService qrCodeService;
 
-    @PostMapping(produces = {"application/json"}, consumes = {"application/json"})
+    @PostMapping(value = "/create",produces = {"application/json"}, consumes = {"application/json"})
     public ResponseEntity<EmployeeDto> create(@RequestBody EmployeeDto employeeDto) {
         log.debug("REST request to create Employee");
         return ResponseEntity.ok().body(employeeService.create(employeeDto));
@@ -36,7 +36,7 @@ public class EmployeeController {
         return ResponseEntity.ok().body(qrCodeService.generateQRCodeImage(id));
     }
 
-    @PostMapping(value = "/read_qrcode", produces = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/read_qrcode", produces = MediaType.IMAGE_PNG_VALUE)
     public ResponseEntity<String> readFromQRCode(@RequestParam("file") MultipartFile file) throws Exception {
         return ResponseEntity.ok().body(qrCodeService.readFromQRCodeImage(file));
     }
@@ -47,10 +47,10 @@ public class EmployeeController {
         return ResponseEntity.ok().body(employeeService.findById(id));
     }
 
-    @PatchMapping(value = "/update/{id}",produces = {"application/json"}, consumes = {"application/json", "application/merge-patch+json"})
-    public ResponseEntity<EmployeeDto> partialUpdate(@PathVariable(value = "id") Long id, @RequestBody EmployeeDto employeeDto) {
-        log.debug("REST request to partialUpdate Employee");
-        return ResponseEntity.ok().body(employeeService.partialUpdate(employeeDto));
+    @PutMapping (value = "/update/{id}",produces = {"application/json"}, consumes = {"application/json", "application/merge-patch+json"})
+    public ResponseEntity<EmployeeDto> update(@PathVariable(value = "id") Long id, @RequestBody EmployeeDto employeeDto) {
+        log.debug("REST request to update Employee");
+        return ResponseEntity.ok().body(employeeService.update(employeeDto));
     }
 
     @DeleteMapping(value = "/{id}")

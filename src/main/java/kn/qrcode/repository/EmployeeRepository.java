@@ -22,7 +22,7 @@ public interface EmployeeRepository extends JpaRepository<Employee,Long>, JpaSpe
 
     Employee findByEmail(String email);
 
-    @Query("select e from Employee e left join e.office left join e.department " +
+    @Query("select e from Employee e left join e.location left join e.department " +
             " left join e.jobTitle left join e.organization where e.active=:active")
     Page<Employee> findAll(@Param("active")boolean active, Pageable p);
 

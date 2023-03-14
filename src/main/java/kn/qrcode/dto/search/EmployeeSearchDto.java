@@ -1,10 +1,6 @@
 package kn.qrcode.dto.search;
 
 import jakarta.persistence.criteria.Predicate;
-import kn.qrcode.dto.DepartmentDto;
-import kn.qrcode.dto.JobTitleDto;
-import kn.qrcode.dto.LocationDto;
-import kn.qrcode.dto.OrganizationDto;
 import kn.qrcode.model.Employee;
 import kn.qrcode.model.enums.GenderType;
 import lombok.AllArgsConstructor;
